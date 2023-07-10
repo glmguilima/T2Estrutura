@@ -32,8 +32,6 @@ public class Interface {
     }
 
 
-
-
     public void runapp(){
         Scanner scanner = new Scanner(System.in);
         int opcao = 0;
@@ -140,6 +138,18 @@ public class Interface {
 
 
     }
+    public void vetor(){
+        tempo[0][0]=System.nanoTime(); // tempo de inicio da operação
+        preencheMapVetor(100000);
+        tempo[0][1]=System.nanoTime();// o tempo antes de executar a próxima operação.
+        mapavetor.imprimeOrdenado();
+        tempo[0][2]=System.nanoTime();//tempo depois de executar a operação de impressão ordenada.
+        mapavetor.removeChassiMenorOuIgual(202050000);
+        tempo[0][3]=System.nanoTime(); //tempo depois de executar a operação de remoção.
+        mapavetor.getNumeroMarcaFord();
+        tempo[0][4]=System.nanoTime();//tempo de término da operação.
+
+    }
     public void lista(){
         tempo[1][0]=System.nanoTime();
         preencheMapLista(100000);
@@ -148,25 +158,12 @@ public class Interface {
         tempo[1][2]=System.nanoTime();
         mapalista.removeChassiMenorIgual(202050000);
         tempo[1][3]=System.nanoTime();
-
+        mapalista.getNumeroMarcaFord();
         tempo[1][4]=System.nanoTime();
 
 
     }
-    public void vetor(){
-        preencheMapVetor(100000);
-        tempo[0][0]=System.nanoTime();
-        tempo[0][1]=System.nanoTime();
-        mapavetor.imprimeOrdenado();
-        tempo[0][2]=System.nanoTime();
-        mapavetor.removeChassiMenorOuIgual(202050000);
-        tempo[0][3]=System.nanoTime();
 
-        tempo[0][4]=System.nanoTime();
-
-
-
-    }
 
     public void arvore(){
         tempo[2][0]=System.nanoTime();
@@ -174,7 +171,9 @@ public class Interface {
         tempo[2][1]=System.nanoTime();
         mapaarvore.imprimeOrdenado();
         tempo[2][2]=System.nanoTime();
+        mapaarvore.removeChassiMenorOuIgual(202050000);
         tempo[2][3]=System.nanoTime();
+        mapaarvore.getNumeroMarcaFord();
         tempo[2][4]=System.nanoTime();
 
     }
